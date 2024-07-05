@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Escuela secundaria N°6</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" [ngClass]="{active: menuSelect == 'inicio'}" (click)="menuOption('inicio')">
+            Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="materias" [ngClass]="{active: menuSelect == 'materias'}" (click)="menuOption('materias')">
+            Materias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="inscripciones" [ngClass]="{active: menuSelect == 'inscripciones'}" (click)="menuOption('inscripciones')">
+            Registro</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contacto" [ngClass]="{active: menuSelect == 'contacto'}" (click)="menuOption('contacto')">
+            Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="institucional" [ngClass]="{active: menuSelect == 'institucional'}" (click)="menuOption('institucional')">
+            Afiliaciones</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="tienda" [ngClass]="{active: menuSelect == 'tienda'}" (click)="menuOption('tienda')">
+            Tienda</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet/>

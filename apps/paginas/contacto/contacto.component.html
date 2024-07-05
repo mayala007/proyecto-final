@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="contacto.component.css">
+<div class="div-centrado">
+  <form [formGroup]="getContacto" novalidate (submit)="enviar($event)">
+    <h2>Contacto</h2>
+    <p>Completa el formulario para enviar tu consulta.</p>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Correo</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="ejemplo@gmail.com"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': hasErrors('email', 'required') }"
+      />
+      <div *ngIf="hasErrors('email', 'required')" class="text-danger">Correo obligatorio</div>
+    </div>
+    <br />
+    <br />
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Escriba su consulta <small>(El comentario debe contener un mínimo de 10 caracteres)</small></label>
+      <textarea
+        class="form-control"
+        id="comment"
+        rows="3"
+        formControlName="comment"
+        [ngClass]="{ 'is-invalid': hasErrors('comment', 'required') || hasErrors('comment', 'minlength') }"
+      ></textarea>
+      <div *ngIf="hasErrors('comment', 'required')" class="text-danger">Comentario obligatorio</div>
+      <div *ngIf="hasErrors('comment', 'minlength')" class="text-danger">El comentario debe contener mínimo 10 caracteres</div>
+    </div>
+    <button type="submit" class="btn btn-success">Enviar</button>
+  </form>
+</div>

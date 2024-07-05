@@ -1,0 +1,42 @@
+.container-1 {
+  padding: 1%;
+  justify-content: center;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.container-2 {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 2em;
+  margin-top: 10px;
+  padding: 1%;
+}
+
+.primario {
+  width: 450px;
+  height: 450px;
+  background-color: #000000;
+  padding: 1px;
+  border: 1px solid #000000;
+}
+
+.secundario {
+  width: 450px;
+  height: 450px;
+  background-color: #000000;
+  padding: 1px;
+  border: 1px solid #000000;
+}
+
+.docente {
+  width: 450px;
+  height: 450px;
+  background-color: #000000;
+  padding: 1px;
+  border: 1px solid #000000;
+}

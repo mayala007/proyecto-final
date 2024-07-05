@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="inscripciones.component.css">
+<div class="div-centrado">
+  <form [formGroup]="getRegistro" novalidate (submit)="enviar($event)">
+    <h2>Regístrate</h2>
+    <p>Completa el formulario para crear tu cuenta.</p>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        formControlName="email"
+        placeholder="ejemplo@email.com"
+        [ngClass]="{
+          'is-invalid': hasErrors('email', 'required') || hasErrors('email', 'email')
+        }"
+      />
+      <div *ngIf="hasErrors('email', 'required')" class="text-danger">Campo requerido</div>
+      <div *ngIf="hasErrors('email', 'email')" class="text-danger">Formato inválido</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        formControlName="password"
+        placeholder="Contraseña"
+        [ngClass]="{ 'is-invalid': hasErrors('password', 'required') }"
+      />
+      <div *ngIf="hasErrors('password', 'required')" class="text-danger">Clave obligatoria</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        aria-describedby="name"
+        formControlName="name"
+        placeholder="Juan"
+        [ngClass]="{
+          'is-invalid': hasErrors('name', 'required') || hasErrors('name', 'minlength')
+        }"
+      />
+      <div *ngIf="hasErrors('name', 'required')" class="text-danger">Este campo no debe estar vacío</div>
+      <div *ngIf="hasErrors('name', 'minlength')" class="text-danger">El nombre debe contener al menos 3 caracteres</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="surname" class="form-label">Apellido</label>
+      <input
+        type="text"
+        class="form-control"
+        id="surname"
+        aria-describedby="surname"
+        formControlName="surname"
+        placeholder="Pérez"
+        [ngClass]="{
+          'is-invalid': hasErrors('surname', 'required') || hasErrors('surname', 'minlength')
+        }"
+      />
+      <div *ngIf="hasErrors('surname', 'required')" class="text-danger">Este campo no debe estar vacío</div>
+      <div *ngIf="hasErrors('surname', 'minlength')" class="text-danger">El apellido debe contener al menos 3 caracteres</div>
+    </div>
+
+    <div class="mb-3">
+      <label for="identification" class="form-label">DNI</label>
+      <input
+        type="text"
+        class="form-control"
+        id="identification"
+        aria-describedby="identification"
+        formControlName="identification"
+        placeholder="12345678"
+        [ngClass]="{
+          'is-invalid': hasErrors('identification', 'required') || hasErrors('identification', 'pattern')
+        }"
+      />
+      <div *ngIf="hasErrors('identification', 'required')" class="text-danger">Campo requerido</div>
+      <div *ngIf="hasErrors('identification', 'pattern')" class="text-danger">Formato inválido</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+  </form>
+</div>
